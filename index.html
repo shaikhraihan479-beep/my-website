@@ -3,198 +3,253 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fictional Portfolio</title>
+    <title>Raihan Shaikh | Professional Portfolio</title>
+    
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
     <!-- Navbar -->
     <header class="navbar">
-        <div class="logo">MyPortfolio</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle" id="menuToggle">☰</div>
+        <div class="container nav-container">
+            <div class="logo">Raihan<span>.dev</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </header>
 
     <!-- Home Section -->
     <section id="home" class="home">
-        <div class="home-content">
-            <h1>Hello, I’m <span>Raihan Shaikh</span></h1>
-            <h2>Creative Web Developer</h2>
+        <div class="home-bg-glow"></div>
+        <div class="container home-content" data-aos="fade-up">
+            <h3>Hello, It's Me</h3>
+            <h1>Raihan Shaikh</h1>
+            <h2 class="typewriter-text">And I'm a <span class="typing"></span></h2>
             <p>
                 I design and build modern, responsive, and user-friendly websites.
-                Turning ideas into digital experiences is my passion.
+                Turning ideas into high-performance digital experiences is my passion.
             </p>
-            <button class="btn">View My Work</button>
+            <div class="btn-group">
+                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+            
+            <!-- Socials floating -->
+            <div class="home-socials">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
-    <div class="about-container">
-
-        <!-- Profile Image -->
-        <div class="about-image">
-            <img src="raihan-pic.jpeg" alt="Profile Picture">
-        </div>
-
-        <!-- About Text -->
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>
-                I’m Raihan Shaikh, a fictional web developer with a passion for crafting
-                visually engaging and highly functional websites. With a strong focus
-                on user experience, I transform ideas into clean, modern digital
-                solutions.
-            </p>
-            <p>
-                Over the years, I’ve worked on a wide range of creative projects—from
-                personal portfolios to dynamic business websites. My approach combines
-                thoughtful design, efficient code, and attention to detail.
-            </p>
-            <p>
-                When I’m not coding, I enjoy exploring new design trends, learning
-                emerging web technologies, and experimenting with creative concepts
-                that push the boundaries of the web.
-            </p>
-        </div>
-
-        <!-- Stats -->
-        <div class="about-stats">
-            <div class="stat-card">
-                <h3>1+</h3>
-                <span>Years Experience</span>
-            </div>
-            <div class="stat-card">
-                <h3>1</h3>
-                <span>Project Completed</span>
-            </div>
-            <div class="stat-card">
-                <h3>0</h3>
-                <span>Happy Clients</span>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!--project section-->
-<section id="projects" class="projects">
-    <div class="projects-container">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">
-            A selection of fictional projects that showcase creativity,
-            functionality, and modern web design.
-        </p>
-
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Nova Landing Page</h3>
-                    <p>
-                        A sleek and modern landing page designed for a fictional
-                        tech startup, focusing on clarity, conversions, and
-                        responsive design.
-                    </p>
-                    <span class="tech">HTML • CSS • JavaScript</span>
+        <div class="container about-container">
+            <!-- Profile Image -->
+            <div class="about-image" data-aos="fade-right">
+                <div class="img-wrapper">
+                    <img src="raihan-pic.jpeg" alt="Raihan Shaikh" onerror="this.src='https://via.placeholder.com/400x400/333/fff?text=Raihan'">
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>TaskFlow Dashboard</h3>
-                    <p>
-                        A productivity dashboard that helps users manage tasks,
-                        track progress, and stay organized through a clean UI.
-                    </p>
-                    <span class="tech">HTML • CSS • JavaScript</span>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Creative Portfolio</h3>
-                    <p>
-                        A visually rich personal portfolio created for a fictional
-                        designer, featuring smooth transitions and bold layouts.
-                    </p>
-                    <span class="tech">HTML • CSS • JavaScript</span>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>ShopEase Website</h3>
-                    <p>
-                        An e-commerce website concept with product listings,
-                        intuitive navigation, and a mobile-first design approach.
-                    </p>
-                    <span class="tech">HTML • CSS • JavaScript</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--contact us section-->
-<section id="contact" class="contact">
-    <div class="contact-container">
-        <h2 class="section-title">Contact Us</h2>
-        <p class="section-subtitle">
-            Have a project in mind or just want to say hello?
-            Feel free to reach out anytime.
-        </p>
-
-        <div class="contact-wrapper">
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
+            <!-- About Text -->
+            <div class="about-text" data-aos="fade-left">
+                <h2 class="section-title">About <span>Me</span></h2>
+                <h4 class="sub-heading">Professional Web Developer</h4>
                 <p>
-                    I’m always open to discussing new ideas, creative projects,
-                    or opportunities to collaborate. Let’s build something
-                    amazing together.
+                    I’m Raihan Shaikh, a developer with a passion for crafting
+                    visually engaging and highly functional websites. With a strong focus
+                    on user experience, I transform ideas into clean, modern digital
+                    solutions.
                 </p>
+                <p>
+                    Over the years, I’ve worked on a wide range of creative projects—from
+                    personal portfolios to dynamic business websites. My approach combines
+                    thoughtful design, efficient code, and attention to detail.
+                </p>
+                
+                <!-- Stats -->
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>01+</h3>
+                        <span>Years Experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>10+</h3>
+                        <span>Projects Done</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>05+</h3>
+                        <span>Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <ul>
-                    <li><strong>Email:</strong> shaikhraihan1109@gmail.com </li>
-                    <li><strong>Phone:</strong> +91 93813 20902</li>
-                    <li><strong>Location:</strong> Mahim, Mumbai</li>
-                    <li><strong>LinkedIn:</strong> Alex Carter</li>
-                </ul>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Latest <span>Projects</span></h2>
+                <p class="section-subtitle">A showcase of my recent work focusing on functionality and design.</p>
             </div>
 
-            <!-- Contact Form -->
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Your Email" required />
-                <textarea rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="project-content">
+                        <h3>Nova Landing Page</h3>
+                        <p>A sleek and modern landing page designed for a tech startup, focusing on clarity and conversions.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <a href="#" class="read-more">View Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-icon"><i class="fas fa-tasks"></i></div>
+                    <div class="project-content">
+                        <h3>TaskFlow Dashboard</h3>
+                        <p>A productivity dashboard that helps users manage tasks, track progress, and stay organized.</p>
+                        <div class="tech-stack">
+                            <span>UI/UX</span><span>CSS Grid</span><span>JS</span>
+                        </div>
+                        <a href="#" class="read-more">View Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-icon"><i class="fas fa-palette"></i></div>
+                    <div class="project-content">
+                        <h3>Creative Portfolio</h3>
+                        <p>A visually rich personal portfolio featuring smooth transitions, animations, and bold layouts.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span><span>SCSS</span><span>AOS</span>
+                        </div>
+                        <a href="#" class="read-more">View Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="project-content">
+                        <h3>ShopEase Website</h3>
+                        <p>An e-commerce website concept with product listings, intuitive navigation, and mobile-first design.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <a href="#" class="read-more">View Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <!--contact info-->
-    <div class="contact-socials">
-    <p>Or reach me directly:</p>
-    <a href="mailto:hello@fictionalportfolio.dev">📧 shaikhraihan1109@gmail.com </a>
-    <a href="https://wa.me/15551234567" target="_blank">💬 WhatsApp: +91 93813 20902</a>
-    <a href="#" target="_blank">🔗 LinkedIn: Alex Carter</a>
-</div>
+    </section>
 
-</section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Contact <span>Me</span></h2>
+                <p class="section-subtitle">Let's work together to build something great.</p>
+            </div>
 
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Get in Touch</h3>
+                    <p>I’m open to freelance work and collaboration opportunities. Feel free to message me!</p>
+                    
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <div class="info-text">
+                            <span>Email Me</span>
+                            <p>shaikhraihan1109@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-text">
+                            <span>Call Me</span>
+                            <p>+91 93813 20902</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-text">
+                            <span>Location</span>
+                            <p>Mahim, Mumbai</p>
+                        </div>
+                    </div>
 
+                    <div class="social-links">
+                        <a href="https://wa.me/919381320902" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
 
+                <!-- Contact Form -->
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="input-box">
+                        <input type="text" required />
+                        <label>Your Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" required />
+                        <label>Your Email</label>
+                    </div>
+                    <div class="input-box">
+                        <textarea required></textarea>
+                        <label>Your Message</label>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2024 <span>Raihan Shaikh</span>. All Rights Reserved.</p>
+            <a href="#home" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Typed.js for Typewriter Effect -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Main Script -->
     <script src="script.js"></script>
 </body>
 </html>
