@@ -27,7 +27,7 @@
 
 html {
     font-size: 16px;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
 }
 
 body {
@@ -35,6 +35,7 @@ body {
     color: var(--text-color);
     font-family: var(--font-body);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -62,7 +63,7 @@ section {
 }
 
 .navbar.scrolled {
-    background: rgba(8, 27, 41, 0.9);
+    background: rgba(8, 27, 41, 0.95); /* Slightly darker for better mobile read */
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     padding: 15px 0;
@@ -128,7 +129,7 @@ section {
     font-size: 28px;
     color: var(--text-color);
     cursor: pointer;
-    display: none;
+    display: none; /* Hidden on desktop */
 }
 
 /* ====================
@@ -140,7 +141,7 @@ section {
     align-items: center;
     background: var(--bg-color);
     position: relative;
-    overflow: hidden;
+    padding-top: 80px; /* Space for fixed navbar */
 }
 
 /* Background Glow Effect */
@@ -155,6 +156,7 @@ section {
     opacity: 0.2;
     border-radius: 50%;
     z-index: 0;
+    pointer-events: none;
 }
 
 .home-content {
@@ -193,6 +195,7 @@ section {
 .btn-group {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on very small screens */
 }
 
 .btn {
@@ -206,6 +209,7 @@ section {
     font-weight: 600;
     letter-spacing: 1px;
     transition: 0.5s ease;
+    white-space: nowrap;
 }
 
 .btn:hover {
@@ -270,8 +274,8 @@ section {
 
 .img-wrapper {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 250px; /* Adjusted base size */
+    height: 250px;
     border-radius: 50%;
     margin: 0 auto;
     display: flex;
@@ -286,7 +290,6 @@ section {
     border: 3px solid var(--main-color);
     object-fit: cover;
     box-shadow: 0 0 20px var(--main-color);
-    transition: 0.5s;
 }
 
 .img-wrapper::before {
@@ -326,6 +329,7 @@ section {
     display: flex;
     gap: 20px;
     margin-top: 30px;
+    flex-wrap: wrap; /* Wraps stats on small screens */
 }
 
 .stat-card {
@@ -334,6 +338,7 @@ section {
     border-radius: 10px;
     text-align: center;
     flex: 1;
+    min-width: 100px; /* Minimum width for stats */
     border: 1px solid var(--glass-border);
     transition: 0.3s;
 }
@@ -344,7 +349,7 @@ section {
 }
 
 .stat-card h3 {
-    font-size: 32px;
+    font-size: 28px;
     color: var(--main-color);
 }
 
@@ -367,7 +372,8 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Adjusted grid to fit smaller screens (min 250px instead of 300px) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
@@ -378,7 +384,6 @@ section {
     text-align: center;
     border: 1px solid transparent;
     transition: 0.4s ease;
-    overflow: hidden;
 }
 
 .project-card:hover {
@@ -394,7 +399,7 @@ section {
 }
 
 .project-content h3 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
@@ -409,6 +414,7 @@ section {
     justify-content: center;
     gap: 10px;
     margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .tech-stack span {
@@ -464,7 +470,7 @@ section {
 }
 
 .icon-box {
-    width: 50px;
+    min-width: 50px; /* Fixed size so it doesn't shrink */
     height: 50px;
     background: var(--bg-color);
     border-radius: 50%;
@@ -482,9 +488,10 @@ section {
 }
 .info-text p {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-color);
     font-weight: 600;
+    word-break: break-all; /* Prevents long emails from breaking layout */
 }
 
 .social-links {
@@ -559,6 +566,11 @@ section {
     font-size: 14px;
 }
 
+.contact-form button {
+    width: 100%; /* Full width button on mobile */
+    cursor: pointer;
+}
+
 /* ====================
    7. FOOTER
    ==================== */
@@ -588,40 +600,94 @@ footer span {
     margin-top: 15px;
 }
 
-/* ====================
-   8. RESPONSIVE DESIGN
-   ==================== */
+/* =========================================
+   8. MOBILE RESPONSIVE DESIGN (UPDATED)
+   ========================================= */
+
+/* Tablet (Max Width 991px) */
 @media (max-width: 991px) {
-    .container { padding: 0 3%; }
+    .container { padding: 0 4%; }
+    
+    .home { padding: 0; }
+    .home-bg-glow { display: none; } /* Disable glow for performance on tablets/mobile */
+    
+    .home-content h1 { font-size: 50px; }
+    
     .about-container { grid-template-columns: 1fr; text-align: center; }
-    .img-wrapper { margin-bottom: 20px; }
+    .img-wrapper { margin-bottom: 30px; width: 300px; height: 300px; }
     .about-stats { justify-content: center; }
+    
     .contact-wrapper { grid-template-columns: 1fr; }
 }
 
+/* Mobile (Max Width 768px) */
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
+    
+    .navbar { padding: 15px 0; }
 
     .nav-links {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        padding: 1rem 3%;
-        background: var(--bg-color);
-        border-top: 1px solid rgba(0,0,0,0.1);
+        padding: 20px 5%;
+        background: var(--bg-color); /* Solid background so text reads clearly */
+        border-top: 1px solid rgba(255,255,255,0.1);
         flex-direction: column;
         display: none;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
     }
 
     .nav-links.active { display: block; }
 
     .nav-links li {
-        margin: 15px 0;
+        margin: 20px 0;
         margin-left: 0;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        font-size: 20px; /* Larger text for better tapping */
+        display: block;
     }
 
+    section { padding: 60px 0; }
+    
     .home-content h1 { font-size: 40px; }
-    .home-bg-glow { display: none; } /* Better performance on mobile */
+    .home-content h3 { font-size: 20px; }
+    .typewriter-text { font-size: 22px; }
+    
+    .img-wrapper { width: 220px; height: 220px; }
+    
+    .section-title { font-size: 32px; }
+    
+    .contact-info { text-align: center; }
+    .info-item { 
+        flex-direction: column; 
+        gap: 10px; 
+    }
+    .social-links { justify-content: center; }
+}
+
+/* Small Mobile (Max Width 450px) */
+@media (max-width: 450px) {
+    html { font-size: 14px; } /* Slightly scale down global text */
+    
+    .home-content h1 { font-size: 32px; }
+    
+    .btn-group { 
+        flex-direction: column; 
+        width: 100%;
+    }
+    .btn { 
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column for projects on small phones */
+    }
+    
+    .home-socials { bottom: 30px; }
 }
